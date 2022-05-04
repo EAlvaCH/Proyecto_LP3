@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Operaciones</title>
+    </h:head>
+    <h:body>
+        
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Numero 1"/>
+                <p:inputText value="#{operacionesView.numero1}"/>
+                <h:outputLabel value="Numero 2"/>
+                <p:inputText value="#{operacionesView.numero2}"/>
+                <h:outputLabel value="Operacion"/>
+                <h:selectOneMenu id="txt3" value="#{operacionesView.operacion}" required="true" label="Text 3">
+                    <f:selectItem itemLabel="sumar" itemValue="1"/>
+                    <f:selectItem itemLabel="restar" itemValue="2"/>
+                    <f:selectItem itemLabel="multiplicar" itemValue="3"/>
+                    <f:selectItem itemLabel="dividir" itemValue="4"/>
+                </h:selectOneMenu>
+                
+                <p:commandButton value="Calcular" action="#{operacionesView.obtener()}" update="@form"/>
+                
+            </h:panelGrid>
+                <h:outputLabel value="#{operacionesView.resultadoT}"/>
+                <h:outputLabel value="#{operacionesView.resultado}"/>
+        </h:form>    
+    </h:body>
+</html>
+
